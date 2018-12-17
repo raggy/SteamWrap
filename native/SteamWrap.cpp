@@ -14,6 +14,11 @@
 
 #include <steam/steam_api.h>
 
+#if defined(_MSC_VER)
+#define strtoll _strtoi64
+#define strtoull _strtoui64
+#endif
+
 //Thanks to Sven Bergström for these two helper functions:
 inline value bytes_to_hx( const unsigned char* bytes, int byteLength )
 {
